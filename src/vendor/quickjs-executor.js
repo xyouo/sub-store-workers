@@ -94,7 +94,7 @@ async function initQuickJS() {
 
     const QuickJS = await newQuickJSWASMModule(adaptVariant);
     const runtime = QuickJS.newRuntime();
-    runtime.setMemoryLimit(1024 * 512);       // 512KB 内存限制
+    runtime.setMemoryLimit(1024 * 1024 * 8);  // 8MB 内存限制
     runtime.setMaxStackSize(1024 * 256);      // 256KB 栈限制
     // 每 5000 条指令中断检查，防止死循环
     var __interruptCounter = 0;
